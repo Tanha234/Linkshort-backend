@@ -12,16 +12,9 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// Root Route - Friendly landing for Render
+// Root Route
 app.get("/", (req, res) => {
-    res.json({ 
-        message: "LinkShort Backend API is running on Render",
-        status: "operational",
-        endpoints: {
-            health: "/api/health",
-            urls: "/api/urls"
-        }
-    });
+    res.send("server is running");
 });
 
 // MongoDB Connection Strategy for Serverless
